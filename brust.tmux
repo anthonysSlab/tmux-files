@@ -19,8 +19,6 @@ left_arrow_icon=''
 upload_speed_icon=''
 download_speed_icon=''
 session_icon=''
-time_icon=''
-date_icon=''
 prefix_highlight_pos=$(tmux_get @tmux_power_prefix_highlight_pos)
 time_format='%T'
 date_format='%F'
@@ -83,7 +81,7 @@ tmux_set status-left "$LS"
 tmux_set status-right-bg "$BG"
 tmux_set status-right-fg "G12"
 tmux_set status-right-length 150
-RS="#[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
+RS="#[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_format "
 
 RS="#[fg=$G05,bg=$BG]$left_arrow_icon#[fg=$TC,bg=$G05] $download_speed_icon #{download_speed} $RS"
 
@@ -125,4 +123,5 @@ tmux_set message-style "fg=$TC,bg=$BG"
 tmux_set message-command-style "fg=$TC,bg=$BG"
 
 # Copy mode highlight
-tmux_set mode-style "bg=$TC,fg=$FG"
+selection="#48462d"
+tmux_set mode-style "bg=$selection,fg=$FG"
